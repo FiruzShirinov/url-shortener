@@ -20,7 +20,7 @@
             <div class="container">
 
                 <div class="input-group">
-                    <input type="text" name="original" id="original" class="form-control" placeholder="Ссылка для сокращения" aria-describedby="store_and_list_button">
+                    <input type="text" name="original" id="original" class="form-control" placeholder="Ссылка для сокращения (пример: https://сервиспочта.рф/)" aria-describedby="store_and_list_button">
                     <button class="btn btn-primary" type="button" id="store_and_list_button">Сократить</button>
                 </div>
                 <div class="invalid-feedback">
@@ -37,7 +37,7 @@
                         </thead>
                         <tbody>
                             @forelse ($urls as $url)
-                                <tr>
+                                <tr data-url="{{ $url->original }}">
                                     <td>{{ $url->id }}</td>
                                     <td>{{ $url->original }}</td>
                                     <td>{{ $url->shortened }}</td>

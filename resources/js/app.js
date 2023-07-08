@@ -12,7 +12,7 @@ $(function () {
             tableBody.empty()
             $.each(urls, function (key, url) {
                 tableBody.append(`
-                    <tr>
+                    <tr data-url="${url.original}">
                         <td>${url.id}</td>
                         <td>${url.original}</td>
                         <td>${url.shortened}</td>
@@ -38,5 +38,9 @@ $(function () {
             }
             original.trigger('focus')
         })
+    })
+
+    $('#all_urls').on('click', 'tr', function () {
+        window.open($(this).data('url'), '_blank')
     })
 })

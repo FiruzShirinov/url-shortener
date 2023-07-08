@@ -25,7 +25,7 @@ class UrlRequest extends FormRequest
     public function rules()
     {
         return [
-            'original' => 'required|string|unique:urls,original|regex:/^(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/',
+            'original' => 'required|unique:urls,original|url',
             'shortened' => 'required|string|unique:urls,shortened',
         ];
     }
