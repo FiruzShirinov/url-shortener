@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.pulse {
+    animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        background-color: #ffff;
+    }
+    50% {
+        background-color: #a0c4fa;
+    }
+  }

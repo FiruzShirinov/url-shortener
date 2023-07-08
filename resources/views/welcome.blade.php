@@ -19,14 +19,14 @@
         <main class="py-4">
             <div class="container">
 
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <input type="text" name="original" id="original" class="form-control" placeholder="Ссылка для сокращения" aria-describedby="store_and_list_button">
                     <button class="btn btn-primary" type="button" id="store_and_list_button">Сократить</button>
-                    <div class="invalid-feedback">
-                    </div>
+                </div>
+                <div class="invalid-feedback">
                 </div>
 
-                <div class="card shadow-sm border-0 p-3">
+                <div class="card shadow-sm border-0 p-3 mt-3">
                     <table id="all_urls" class="table table-hover m-0">
                         <thead>
                             <tr>
@@ -38,7 +38,7 @@
                         <tbody>
                             @forelse ($urls as $url)
                                 <tr>
-                                    <th scope="row">{{ $url->id }}</th>
+                                    <td>{{ $url->id }}</td>
                                     <td>{{ $url->original }}</td>
                                     <td>{{ $url->shortened }}</td>
                                 </tr>
