@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UrlController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect()->route('urls.index');
+});
+
+Route::controller(UrlController::class)->group(function(){
+    Route::get('/urls', 'index')->name('urls.index');
+    Route::post('/urls/store-and-list', 'storeAndList')->name('urls.store_and_list');
 });
